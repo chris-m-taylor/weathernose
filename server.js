@@ -46,12 +46,9 @@ const apiCall = () => {
 }
 
 var today = new Date();
-console.log(today.getHours());
-
-if (today.getHours() >= 13){
+if (today.getHours() >= 17){
     apiCall();
 }
-//apiCall();
 console.log('hello!!');
 
 
