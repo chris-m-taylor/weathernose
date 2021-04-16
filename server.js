@@ -45,9 +45,15 @@ const apiCall = () => {
     .catch(error => console.log(error));
 }
 
-apiCall();
+var today = new Date();
+console.log(today.getHours());
+
+if (today.getHours() >= 12){
+    apiCall();
+}
+//apiCall();
 console.log('hello!!');
-console.log(process.env);
+
 
 
 
