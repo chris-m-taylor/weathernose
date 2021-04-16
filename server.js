@@ -46,7 +46,8 @@ const apiCall = () => {
 }
 
 var today = new Date();
-if (today.getHours() >= 16){
+//check to see if time is between 6am and 8am (have to add 4 to match the heroku time)
+if (today.getHours() >= 10 && today.getHours() <= 12){
     apiCall();
 }
 console.log('hello!!');
