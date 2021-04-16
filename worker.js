@@ -4,12 +4,14 @@
 const axios = require('axios').default;
 
 //twilio
-const accountSid = '***REMOVED***';
-const authToken = '***REMOVED***';
+const accountSid = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
+const twillioNum = process.env.TWILLIO_NUM;
+const cellNum = process.env.CELL_NUM;
 
 //openweathermap
-const apiKey = '***REMOVED***';
+const apiKey = process.env.API_KEY;
 const charlestonID = '4574324';
 
 //Humidity threshhold
@@ -29,8 +31,8 @@ const apiCall = () => {
         if (humidity < humThresh) {
             client.messages.create({
                 body: `SPRAY NOSE! HUMIDITY IS ${humidity}`,
-                from: '***REMOVED***',
-                to: '***REMOVED***'
+                from: twillioNum,
+                to: cellNum
             })
             .then(message => console.log(message.sid))
             .catch(error => console.log(error));
