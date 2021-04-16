@@ -1,5 +1,8 @@
 // This server will call a weather api and check from humidty and then send a text to my number if it is below a certain amount.
 
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 //axios
 const axios = require('axios').default;
 
@@ -44,6 +47,7 @@ const apiCall = () => {
 
 apiCall();
 console.log('hello!!');
+console.log(process.env);
 
 
 
