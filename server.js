@@ -13,7 +13,7 @@ const apiKey = '***REMOVED***';
 const charlestonID = '4574324';
 
 //Humidity threshhold
-const humThresh = 70;
+const humThresh = 100;
 
 // call to weather api with check and then call to twillio
 const apiCall = () => {
@@ -40,6 +40,7 @@ const apiCall = () => {
     .catch(error => console.log(error));
 }
 
+apiCall();
 console.log('hello!!');
 
 
